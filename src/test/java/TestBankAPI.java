@@ -12,6 +12,7 @@ import static rest.ApiRequest.getRest;
 
 @RunWith(Parameterized.class)
 public class TestBankAPI {
+    private String countryCode;
 
 //    @Parameterized.Parameters
 //    public static Collection options() {
@@ -29,7 +30,7 @@ public class TestBankAPI {
     @Test
     public void test1(){
 
-        JSONArray bank=new JSONArray(getRest("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode="+ CountryCode.AUD +"&json"));
+        JSONArray bank=new JSONArray(getRest("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode="+ countryCode +"&json"));
         JSONObject jsonObject= (JSONObject)  bank.get(0);
 
                 System.out.println("r030 ="+jsonObject.getInt("r030")+" \n"
