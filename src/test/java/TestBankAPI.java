@@ -12,14 +12,13 @@ import static rest.ApiRequest.getRest;
 
 @RunWith(Parameterized.class)
 public class TestBankAPI {
-    private String countryCode;
+    public TestBankAPI(CountryCode countryCode) {
+        this.countryCode = countryCode;
+    }
 
-//    @Parameterized.Parameters
-//    public static Collection options() {
-//        return Arrays.stream(new String[]{
-//                "USD",
-//                "AUD"}).toList();
-//    }
+    public static CountryCode countryCode;
+
+
 
     @Parameterized.Parameters
     public static Collection options(){
